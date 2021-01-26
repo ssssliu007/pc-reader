@@ -1,0 +1,84 @@
+{
+  "version": "1.0.0",
+  "name": "appname",
+  "author": "QJP",
+  "description": "My webpack project",
+  "main": "./dist/electron/index.js",
+  "scripts": {
+    "dev": "node exe/startdev.js",
+    "buildpack": "node exe/build.js && electron-builder"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@roxi/routify": "^2.10.5",
+    "babel-loader": "^8.1.0",
+    "compression": "^1.7.1",
+    "del": "^5.1.0",
+    "electron": "^7.2.0",
+    "electron-builder": "^22.4.1",
+    "polka": "next",
+    "sirv": "^1.0.0",
+    "svelte-material-ui": "^2.0.0-beta.0"
+  },
+  "dependencies": {
+    "@babel/node": "^7.8.7",
+    "@babel/plugin-proposal-decorators": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.9.0",
+    "@babel/plugin-transform-typescript": "^7.9.4",
+    "@babel/polyfill": "^7.8.7",
+    "@material/typography": "^3.1.0",
+    "axios": "^0.21.1",
+    "cheerio": "^1.0.0-rc.5",
+    "core-js": "3",
+    "css-loader": "^3.4.2",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^4.0.4",
+    "mini-css-extract-plugin": "^0.8.2",
+    "node-loader": "^0.6.0",
+    "node-sass": "^5.0.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "sapper": "^0.28.0",
+    "sass-loader": "^10.1.1",
+    "serve": "^11.3.0",
+    "style-loader": "^1.1.3",
+    "svelte": "^3.17.3",
+    "svelte-loader": "^2.9.0",
+    "svelte-spa-router": "^3.1.0",
+    "webpack": "^4.7.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3",
+    "webpack-hot-middleware": "^2.25.0",
+    "webpack-modules": "^1.0.0"
+  },
+  "build": {
+    "appId": "NAME",
+    "directories": {
+      "output": "build"
+    },
+    "files": [
+      "dist/electron/**/*"
+    ],
+    "dmg": {
+      "contents": [
+        {
+          "x": 410,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        },
+        {
+          "x": 130,
+          "y": 150,
+          "type": "file"
+        }
+      ]
+    },
+    "mac": {
+      "icon": "src/main/icons/icon.icns"
+    },
+    "win": {
+      "icon": "src/main/icons/icon.ico"
+    }
+  }
+}
